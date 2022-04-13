@@ -5,7 +5,7 @@ const { width, height } = useWindowSize()
 </script>
 
 <template>
-  <main class="flex-grow bg-red-400"
+  <main class="flex-grow"
     :style="{ 'max-width': width + 'px', 'max-height': height + 'px' }">
     <router-view />
   </main>
