@@ -3,6 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   '@types/node': ^17.0.23
   '@vitejs/plugin-vue': ^2.3.0
+  '@vueuse/components': ^8.2.5
   '@vueuse/core': ^8.2.5
   '@vueuse/head': ^0.7.6
   autoprefixer: ^10.4.4
@@ -18,6 +19,7 @@ specifiers:
 
 dependencies:
   '@types/node': 17.0.23
+  '@vueuse/components': 8.2.5_vue@3.2.32
   '@vueuse/core': 8.2.5_vue@3.2.32
   '@vueuse/head': 0.7.6_vue@3.2.32
   vue: 3.2.32
@@ -245,6 +247,17 @@ packages:
 
   /@vue/shared/3.2.32:
     resolution: {integrity: sha512-bjcixPErUsAnTQRQX4Z5IQnICYjIfNCyCl8p29v1M6kfVzvwOICPw+dz48nNuWlTOOx2RHhzHdazJibE8GSnsw==}
+
+  /@vueuse/components/8.2.5_vue@3.2.32:
+    resolution: {integrity: sha512-ELhfxeqjcGK1In5E5WTmuLxQMtUypIyHwJN07WW+YL5S+RI7VkFertcD7wV+4/qXOWY/AMBsozXx1ZJt+uFs3Q==}
+    dependencies:
+      '@vueuse/core': 8.2.5_vue@3.2.32
+      '@vueuse/shared': 8.2.5_vue@3.2.32
+      vue-demi: 0.12.5_vue@3.2.32
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - vue
+    dev: false
 
   /@vueuse/core/8.2.5_vue@3.2.32:
     resolution: {integrity: sha512-5prZAA1Ji2ltwNUnzreu6WIXYqHYP/9U2BiY5mD/650VYLpVcwVlYznJDFcLCmEWI3o3Vd34oS1FUf+6Mh68GQ==}

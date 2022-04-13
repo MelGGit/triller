@@ -21,9 +21,7 @@ export default defineConfig({
       'vue-router',
       '@vueuse/core',
       '@vueuse/head',
-    ],
-    exclude: [
-      'vue-demi',
+      '@vueuse/components'
     ],
   },
 })
