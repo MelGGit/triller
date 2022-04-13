@@ -5,7 +5,7 @@ import TrillerIconSVGVue from '@/components/svg/TrillerIconSVG.vue'
 
 <template>
   <header>
-    <nav class="flex items-center justify-between w-full px-8 py-2 shadow-md">
+    <nav class="flex items-center justify-between w-full px-20 py-2 shadow-md">
       <div class="flex items-center">
         <TrillerIconSVGVue width="63" />
         <router-link :to="{ name: 'home' }"
