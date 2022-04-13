@@ -2,7 +2,7 @@
 import { useHead } from '@vueuse/head'
 
 useHead({
-  title: 'Triller',
+  title: 'Triller | Decentral Social-Media-Platform',
   meta: [
     { name: 'description', content: 'Decentral Social-Media-Platform' },
   ],
