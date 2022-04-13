@@ -1,7 +1,29 @@
 import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
+import { resolve } from 'path'
+import Vue from '@vitejs/plugin-vue'
+import Pages from 'vite-plugin-pages'
+import Layouts from 'vite-plugin-vue-layouts';
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue()]
+  plugins: [
+    Vue(),
+    Pages(),
+    Layouts()
+  ],
+  resolve: {
+    alias: {
+      '@': resolve(__dirname, './src')
+    }
+  },
+  optimizeDeps: {
+    include: [
+      'vue',
+      'vue-router',
+      '@vueuse/core',
+      '@vueuse/head',
+    ],
+    exclude: [
+      'vue-demi',
+    ],
+  },
 })
