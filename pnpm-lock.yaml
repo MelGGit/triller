@@ -4,6 +4,8 @@ specifiers:
   '@ethersproject/abi': ^5.6.1
   '@ethersproject/bytes': ^5.6.1
   '@ethersproject/providers': ^5.6.3
+  '@headlessui/vue': ^1.5.0
+  '@heroicons/vue': ^1.0.6
   '@typechain/ethers-v5': ^10.0.0
   '@types/node': ^17.0.23
   '@vitejs/plugin-vue': ^2.3.0
@@ -28,6 +30,8 @@ dependencies:
   '@ethersproject/abi': 5.6.1
   '@ethersproject/bytes': 5.6.1
   '@ethersproject/providers': 5.6.3
+  '@headlessui/vue': 1.5.0_vue@3.2.32
+  '@heroicons/vue': 1.0.6_vue@3.2.32
   '@typechain/ethers-v5': 10.0.0_69dd4095b8530f292381ed227d7a39d4
   '@types/node': 17.0.23
   '@vueuse/components': 8.2.5_vue@3.2.32
@@ -397,6 +401,23 @@ packages:
       '@ethersproject/logger': 5.6.0
       '@ethersproject/properties': 5.6.0
       '@ethersproject/strings': 5.6.0
+    dev: false
+
+  /@headlessui/vue/1.5.0_vue@3.2.32:
+    resolution: {integrity: sha512-jAp6XYpqdEv32xhszaj5ejvjaX5qhu20sCbxu7lplePEfZL+4ffabivJBBTZAiPWczqAXmnZWNWG5DOyqjRa4w==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      vue: ^3.2.0
+    dependencies:
+      vue: 3.2.32
+    dev: false
+
+  /@heroicons/vue/1.0.6_vue@3.2.32:
+    resolution: {integrity: sha512-ng2YcCQrdoQWEFpw+ipFl2rZo8mZ56v0T5+MyfQQvNqfKChwgP6DMloZLW+rl17GEcHkE3H82UTAMKBKZr4+WA==}
+    peerDependencies:
+      vue: '>= 3'
+    dependencies:
+      vue: 3.2.32
     dev: false
 
   /@nodelib/fs.scandir/2.1.5:
