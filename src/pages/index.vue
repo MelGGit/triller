@@ -1,12 +1,14 @@
 <script setup lang="ts">
 import useTypingEffectWithCarousel from '@/composables/useTypingEffectWithCarousel'
 import MetamaskSVGVue from '@/components/svg/MetamaskSVG.vue';
+import LoginModal from '@/components/modals/LoginModal.vue';
 
 import { onMounted, ref } from 'vue';
 
 const element = ref<HTMLSpanElement>()
 const featureText = ref<HTMLSpanElement>()
 const cursor = ref<HTMLSpanElement>()
+const isModalOpen = ref(false)
 
 const carouselText = [
   { text: 'Friendship.', color: '' },
@@ -23,6 +25,13 @@ onMounted(async () => {
   await useTypingEffectWithCarousel(element.value, featureText.value, defaultText, carouselText)
   cursor.value?.classList.remove('input-cursor')
 })
+const openModal = () => {
+  isModalOpen.value = true
+}
+
+const closeModal = () => {
+  isModalOpen.value = false
+}
 
 
 </script>
@@ -48,7 +57,7 @@ onMounted(async () => {
       </div>
     </div>
     <div class="flex flex-col items-center justify-center gap-8">
-      <button
+      <button @click="openModal"
         class="flex items-center justify-center px-5 py-2 font-semibold text-center transition duration-100 rounded-md outline-none sm:inline-flex bg-gradient-to-tr from-indigo-500 to-purple-400 hover:from-indigo-600 hover:to-purple-500 active:from-indigo-700 active:to-purple-600 focus-visible:ring ring-indigo-300">
         <MetamaskSVGVue />
         <span class="ml-4">Create your Account</span>
@@ -60,6 +69,8 @@ onMounted(async () => {
           a small amount of Ether.</p>
       </div>
     </div>
+    <LoginModal :is-modal-open="isModalOpen"
+      @close-modal="closeModal" />
   </div>
 </template>
 
