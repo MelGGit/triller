@@ -1,6 +1,11 @@
 <script setup lang="ts">
 import GithubSVGVue from '@/components/svg/GithubSVG.vue'
 import TrillerIconSVGVue from '@/components/svg/TrillerIconSVG.vue'
+import { useWeb3Store } from '@/store/web3';
+
+const web3Store = useWeb3Store()
+
+
 </script>
 
 <template>
@@ -23,7 +28,7 @@ import TrillerIconSVGVue from '@/components/svg/TrillerIconSVG.vue'
           <button
             class="relative flex items-center py-4 leading-none rounded-lg bg-zinc-900 px-7">
             <span class="transition duration-200">
-              Sign up / Sign in
+              {{ !web3Store.isLoggedIn ? 'Sign up / Sign In' : `${web3Store.userProfile.email} ${web3Store.userProfile.lastName}` }}
             </span>
           </button>
         </div>

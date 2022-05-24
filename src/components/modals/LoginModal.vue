@@ -1,7 +1,10 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } from '@headlessui/vue'
-import { emit } from 'process';
+import { useWeb3Store } from '@/store/web3';
+import { utils } from 'ethers';
+
+const web3Store = useWeb3Store()
 
 defineProps<{
   isModalOpen: boolean
@@ -21,8 +24,33 @@ const closeModal = () => {
   emits('close-modal')
 }
 
-const createAccount = () => {
-  if (username.value.length > 0) {
+const validateForm = () => {
+  return username.value.length > 0 && firstName.value.length > 0 && lastName.value.length > 0 && email.value.length > 0 && bio.value.length > 0
+}
+
+const createAccount = async () => {
+  if (validateForm()) {
+    const userInformation = {
+      firstName: utils.formatBytes32String(firstName.value),
+      lastName: utils.formatBytes32String(lastName.value),
+      username: utils.formatBytes32String(username.value),
+      email: email.value,
+      bio: bio.value
+    }
+
+    try {
+      const response = await web3Store.createUser(userInformation)
+      console.log(response)
+      //@ts-ignore
+      if (response.code !== 4001) {
+        alert("Your user has been created")
+      } else {
+        alert("User could not get created")
+      }
+    } catch (error) {
+      alert(`Sorry your user could not get created_ ${error}`)
+    }
+
     firstName.value = ''
     lastName.value = ''
     username.value = ''
@@ -31,7 +59,6 @@ const createAccount = () => {
     closeModal()
   }
 }
-
 </script>
 <template>
   <TransitionRoot as="template"
@@ -73,6 +100,7 @@ const createAccount = () => {
                       v-model="firstName"
                       name="firstname"
                       type="text"
+                      required
                       autocomplete="given-name"
                       class="modal-login-input" />
                   </div>
@@ -86,6 +114,7 @@ const createAccount = () => {
                       v-model="lastName"
                       name="lastname"
                       type="text"
+                      required
                       autocomplete="family-name"
                       class="modal-login-input" />
                   </div>
@@ -115,6 +144,7 @@ const createAccount = () => {
                       name="email"
                       type="email"
                       autocomplete="email"
+                      required
                       class="modal-login-input" />
                   </div>
                 </div>
@@ -128,6 +158,7 @@ const createAccount = () => {
                       v-model="bio"
                       name="bio"
                       type="text"
+                      required
                       autocomplete="false"
                       class="modal-login-input" />
                   </div>

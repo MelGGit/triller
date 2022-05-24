@@ -4,6 +4,9 @@ import MetamaskSVGVue from '@/components/svg/MetamaskSVG.vue';
 import LoginModal from '@/components/modals/LoginModal.vue';
 
 import { onMounted, ref } from 'vue';
+import { useWeb3Store } from '@/store/web3';
+
+const web3Store = useWeb3Store()
 
 const element = ref<HTMLSpanElement>()
 const featureText = ref<HTMLSpanElement>()
@@ -21,6 +24,7 @@ const carouselText = [
 const defaultText = 'Built for'
 
 onMounted(async () => {
+  web3Store.connect(true)
   if (!element.value || !featureText.value) return
   await useTypingEffectWithCarousel(element.value, featureText.value, defaultText, carouselText)
   cursor.value?.classList.remove('input-cursor')
