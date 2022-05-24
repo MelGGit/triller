@@ -15,4 +15,10 @@ html, body, #app {
   .text-glow {
   text-shadow: 0 0 80px rgb(192 219 255 / 75%), 0 0 32px rgb(65 120 255 / 24%);
   }
+  .modal-login-input {
+    @apply block w-full px-3 py-2 placeholder-gray-400 bg-transparent border border-gray-800 rounded-md shadow-sm appearance-none text-stone-100 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500
+  }
+  .modal-login-label {
+    @apply block font-medium text-stone-100
+  }
 }
