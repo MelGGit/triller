@@ -5,7 +5,7 @@ import LandingNavbarVue from '@/components/navbars/landingNavbar.vue';
 const { width, height } = useWindowSize()
 </script>
 <template>
-  <div class="flex flex-col flex-grow bg-gray-800 text-stone-100"
+  <div class="flex flex-col flex-grow bg-zinc-900 text-stone-100"
     :style="{ 'max-width': width + 'px', 'max-height': height + 'px' }">
     <header>
       <LandingNavbarVue />

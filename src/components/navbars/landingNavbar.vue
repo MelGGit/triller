@@ -21,7 +21,7 @@ import TrillerIconSVGVue from '@/components/svg/TrillerIconSVG.vue'
             class="absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-purple-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200">
           </div>
           <button
-            class="relative flex items-center py-4 leading-none bg-gray-800 rounded-lg px-7">
+            class="relative flex items-center py-4 leading-none rounded-lg bg-zinc-900 px-7">
             <span class="transition duration-200">
               Sign up / Sign in
             </span>

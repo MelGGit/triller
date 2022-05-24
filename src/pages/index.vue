@@ -37,7 +37,8 @@ onMounted(async () => {
         </div>
         <span>Social Media Platform</span>
       </div>
-      <div class="flex justify-center mt-8 italic lg:mt-20 lg:justify-start">
+      <div
+        class="flex justify-center mt-8 italic lg:mt-20 lg:justify-start text-glow">
         <span ref="element"
           class="sentence font-['Darker_Grotesque'] text-3xl lg:text-6xl"></span>
         <span ref="featureText"
